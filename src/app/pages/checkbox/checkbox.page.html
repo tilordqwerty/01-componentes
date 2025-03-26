@@ -1,0 +1,37 @@
+<app-header title="Checkbox"></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let item of checksArray" (click)="onClick( item )">
+      <ion-label class="ion-text-capitalize">{{item.name}}</ion-label>
+      <ion-checkbox
+        [color]="item.name"
+        [(ngModel)]="item.selected"
+        slot="end"
+      ></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+  <form class="ion-padding" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <ion-checkbox
+      formControlName="agree"
+      helperText="Agree to the terms before continuing"
+      errorText="You must agree to the terms to continue"
+    >
+      I agree to the terms and conditions
+    </ion-checkbox>
+
+    <br />
+
+    <ion-button type="submit" size="medium" expand="block">Submit</ion-button>
+  </form>
+
+  <ion-button
+    (click)="showChecks()"
+    expand="block"
+    shape="round"
+    class="ion-padding"
+  >
+    Click me
+  </ion-button>
+</ion-content>

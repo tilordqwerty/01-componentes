@@ -1,0 +1,27 @@
+.custom-button {
+    --background: #93dce9;
+    --background-hover: #9cd8e0;
+    --background-activated: #88edf4;
+    --background-focused: #88e7f4;
+    
+    --border-radius: 0;
+    --border-color: #000;
+    --border-style: solid;
+    --border-width: 1px;
+  
+    --box-shadow: 4px 6px rgb(241, 241, 241);
+  
+    --ripple-color: deeppink;
+  
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+  
+    /* Transición suave para el hover */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .custom-button:active {
+    /* Reducir la sombra y mover el botón hacia la sombra */
+    --box-shadow: 2px 3px rgb(255, 255, 255);
+    transform: translate(2px, 3px);
+  }
