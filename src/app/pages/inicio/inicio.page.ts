@@ -20,7 +20,8 @@ import {
   radioButtonOffOutline,
   albumsOutline,
   checkmarkCircleOutline,
-  calendarOutline
+  calendarOutline,
+  balloonOutline
 } from 'ionicons/icons';
 
 interface ComponentsIntf {
@@ -84,6 +85,11 @@ export class InicioPage implements OnInit {
       name: 'Date Time',
       redirectTo: '/date-time',
     },
+    {
+      icon: 'balloon-outline',
+      name: 'Fab',
+      redirectTo: '/fab',
+    },
   ];
 
   constructor() {
@@ -94,7 +100,8 @@ export class InicioPage implements OnInit {
       radioButtonOffOutline,
       albumsOutline,
       checkmarkCircleOutline,
-      calendarOutline
+      calendarOutline,
+      balloonOutline
     });
   }
 
