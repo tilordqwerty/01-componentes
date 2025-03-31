@@ -21,7 +21,8 @@ import {
   albumsOutline,
   checkmarkCircleOutline,
   calendarOutline,
-  balloonOutline
+  balloonOutline,
+  gridOutline
 } from 'ionicons/icons';
 
 interface ComponentsIntf {
@@ -90,6 +91,11 @@ export class InicioPage implements OnInit {
       name: 'Fab',
       redirectTo: '/fab',
     },
+    {
+      icon: 'grid-outline',
+      name: 'Grid',
+      redirectTo: '/grid',
+    },
   ];
 
   constructor() {
@@ -101,7 +107,8 @@ export class InicioPage implements OnInit {
       albumsOutline,
       checkmarkCircleOutline,
       calendarOutline,
-      balloonOutline
+      balloonOutline,
+      gridOutline
     });
   }
 
