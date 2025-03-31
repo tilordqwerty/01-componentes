@@ -22,7 +22,8 @@ import {
   checkmarkCircleOutline,
   calendarOutline,
   balloonOutline,
-  gridOutline
+  gridOutline,
+  infiniteOutline
 } from 'ionicons/icons';
 
 interface ComponentsIntf {
@@ -96,6 +97,11 @@ export class InicioPage implements OnInit {
       name: 'Grid',
       redirectTo: '/grid',
     },
+    {
+      icon: 'infinite-outline',
+      name: 'Infinite Scroll',
+      redirectTo: '/infinite-scroll',
+    },
   ];
 
   constructor() {
@@ -108,7 +114,8 @@ export class InicioPage implements OnInit {
       checkmarkCircleOutline,
       calendarOutline,
       balloonOutline,
-      gridOutline
+      gridOutline,
+      infiniteOutline
     });
   }
 
