@@ -23,7 +23,8 @@ import {
   calendarOutline,
   balloonOutline,
   gridOutline,
-  infiniteOutline
+  infiniteOutline,
+  documentTextOutline
 } from 'ionicons/icons';
 
 interface ComponentsIntf {
@@ -102,6 +103,11 @@ export class InicioPage implements OnInit {
       name: 'Infinite Scroll',
       redirectTo: '/infinite-scroll',
     },
+    {
+      icon: 'document-text-outline',
+      name: 'Input',
+      redirectTo: '/input',
+    },
   ];
 
   constructor() {
@@ -115,7 +121,8 @@ export class InicioPage implements OnInit {
       calendarOutline,
       balloonOutline,
       gridOutline,
-      infiniteOutline
+      infiniteOutline,
+      documentTextOutline
     });
   }
 
