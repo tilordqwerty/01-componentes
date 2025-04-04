@@ -1,13 +1,68 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>input</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header title= "input forms"></app-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">input</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding" [fullscreen]="true">
+ 
+  <ion-list class="ion-text-capitalize">
+    <ion-list-header>
+      <ion-label>default input</ion-label>
+    </ion-list-header>
+  
+    <ion-item>
+      <ion-input label="nombre" placeholder="john doe"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-input label="ubicacion" value="121 s pinckney st #300"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-input label="eres de" value="madison" [readonly]="true"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-input label="disabled input" value="53703" [disabled]="true"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <form #formInput="ngForm" (ngSubmit)="submitEmail(formInput)">
+
+    <ion-list-header>
+      <ion-label>Form: {{formInput.valid}}</ion-label>
+    </ion-list-header>
+
+
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input type="email"
+                 placeholder="example@outlook.com"
+                 name="email"
+                 [(ngModel)]="user.email"
+                 pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                 required="true"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input type="Password"
+                 name="password"
+                 placeholder="Your Password"
+                 [(ngModel)]="user.password"
+                 required="true"></ion-input>
+                 <ion-buttons slot="end">
+                  <ion-button (click)="showPassword()">
+                    <ion-icon slot="icon-only" [name]=" eye ? 'eye-off-outline' : 'eye-outline' "></ion-icon>
+                  </ion-button>
+                </ion-buttons>
+    </ion-item>
+
+    <ion-button class="ion-margin" 
+                type="submit" 
+                expand="block"
+                [disabled]="formInput.invalid">
+      Login
+    </ion-button>
+
+  </form>
+
+
 </ion-content>
