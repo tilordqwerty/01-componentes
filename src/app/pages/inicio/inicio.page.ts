@@ -24,7 +24,8 @@ import {
   balloonOutline,
   gridOutline,
   infiniteOutline,
-  documentTextOutline
+  documentTextOutline,
+  listOutline
 } from 'ionicons/icons';
 
 interface ComponentsIntf {
@@ -108,6 +109,11 @@ export class InicioPage implements OnInit {
       name: 'Input',
       redirectTo: '/input',
     },
+    {
+      icon: 'list-outline',
+      name: 'List',
+      redirectTo: '/list',
+    },
   ];
 
   constructor() {
@@ -122,7 +128,8 @@ export class InicioPage implements OnInit {
       balloonOutline,
       gridOutline,
       infiniteOutline,
-      documentTextOutline
+      documentTextOutline,
+      listOutline    
     });
   }
 
