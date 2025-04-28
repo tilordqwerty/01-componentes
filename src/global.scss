@@ -39,3 +39,11 @@
 .red-icon, .red-icon .sc-ion-action-sheet-md{
     color: red !important;
 }
+
+.custom-loading {
+    --background: #cff8ff;
+    --spinner-color: #1c6dff;
+  
+    color: black;
+  
+}

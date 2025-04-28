@@ -26,7 +26,8 @@ import {
   infiniteOutline,
   documentTextOutline,
   listOutline,
-  reorderThreeOutline
+  reorderThreeOutline,
+  refreshOutline,
 } from 'ionicons/icons';
 
 interface ComponentsIntf {
@@ -120,6 +121,11 @@ export class InicioPage implements OnInit {
       name: 'List Reorder',
       redirectTo: '/list-reorder',
     },
+    {
+      icon: 'refresh-outline',
+      name: 'Loading',
+      redirectTo: '/loading',
+    },      
   ];
 
   constructor() {
@@ -136,7 +142,8 @@ export class InicioPage implements OnInit {
       infiniteOutline,
       documentTextOutline,
       listOutline,
-      reorderThreeOutline
+      reorderThreeOutline,
+      refreshOutline,
     });
   }
 
