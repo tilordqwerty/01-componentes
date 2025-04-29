@@ -1,48 +1,47 @@
-<app-header title="Card"></app-header>
+<app-header title="card"></app-header>
 
 <ion-content [fullscreen]="true">
-
   <ion-card>
     <ion-card-header>
       <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
       <ion-card-title>Card Title</ion-card-title>
     </ion-card-header>
-  
+
     <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
+      Here's a small text description for the card content. Nothing more,
+      nothing less.
     </ion-card-content>
   </ion-card>
 
- <ion-card>
-  <ion-item color="primary">
-  
-    <ion-buttons slot="start">
-      <ion-button (click)="onClick()">
-        <ion-icon slot="icon-only" [name]="marked ? 'bookmark' : 'bookmark-outline' "></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    
-    <ion-label>Marcadores</ion-label>
-  
-  </ion-item>
+  <ion-card>
+    <ion-item color="primary">
+      <ion-buttons slot="start">
+        <ion-button (click)="onClick()">
+          <ion-icon
+            slot="icon-only"
+            [name]="marked ? 'bookmark' : 'bookmark-outline' "
+          ></ion-icon>
+        </ion-button>
+      </ion-buttons>
 
-  <ion-card-content>
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-    Quae impedit voluptate illum iure ducimus similique expedita praesentium atque, 
-    soluta quis voluptas libero natus totam maxime rem mollitia, delectus magni enim.
-  </ion-card-content>
+      <ion-label>Marcadores</ion-label>
+    </ion-item>
 
-</ion-card>
+    <ion-card-content>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae impedit
+      voluptate illum iure ducimus similique expedita praesentium atque, soluta
+      quis voluptas libero natus totam maxime rem mollitia, delectus magni enim.
+    </ion-card-content>
+  </ion-card>
 
-<ion-card>
-  <ion-img src="assets/images/tilordqwerty.webp"></ion-img>
+  <ion-card>
+    <ion-img src="assets/images/tilordqwerty.webp"></ion-img>
 
-  <ion-card-content>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-    Non ipsam, dolores repellendus distinctio suscipit quidem 
-    optio sapiente quo natus fugiat! Quia, eum eaque molestiae 
-    neque distinctio eligendi delectus. Magnam, mollitia!
-  </ion-card-content>
-</ion-card>
-
+    <ion-card-content>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ipsam,
+      dolores repellendus distinctio suscipit quidem optio sapiente quo natus
+      fugiat! Quia, eum eaque molestiae neque distinctio eligendi delectus.
+      Magnam, mollitia!
+    </ion-card-content>
+  </ion-card>
 </ion-content>

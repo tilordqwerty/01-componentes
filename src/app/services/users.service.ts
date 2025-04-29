@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
-
+import { ComponentsIntf } from '../interfaces/Components';
 
 @Injectable({
   providedIn: 'root'
@@ -17,5 +17,9 @@ export class UsersService {
   
   deleteUser(id: any) {
     return this.httpClient.delete(`https://jsonplaceholder.typicode.com/users/${id}`);
+  }
+
+  getMenu(){
+    return this.httpClient.get<ComponentsIntf[]>(`assets/json/menu.json`);
   }
 }
