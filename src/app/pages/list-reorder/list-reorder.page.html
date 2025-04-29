@@ -1,31 +1,31 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start" mode="ios">
-      <ion-back-button defaultHref="/" text="Regresar" color="primary"></ion-back-button>
+      <ion-back-button
+        defaultHref="/"
+        text="Regresar"
+        color="primary"
+      ></ion-back-button>
     </ion-buttons>
 
     <ion-title class="ion-text-capitalize">list reorder</ion-title>
 
     <ion-toggle slot="end" (ionChange)="toggleReorder()"></ion-toggle>
-
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
   <ion-list inset>
-
-    <ion-reorder-group [disabled]="isReorderEnabled" (ionItemReorder)="reorderGames($any($event))">
-
+    <ion-reorder-group
+      [disabled]="isReorderEnabled"
+      (ionItemReorder)="reorderGames($any($event))"
+    >
       <ion-item *ngFor="let game of games">
         <ion-label>{{ game }}</ion-label>
         <ion-reorder slot="end">
           <ion-icon name="sync-outline"></ion-icon>
         </ion-reorder>
       </ion-item>
-
     </ion-reorder-group>
-
   </ion-list>
-
 </ion-content>

@@ -17,7 +17,7 @@ export class LoadingPage {
 
   async showLoading() {
     const loading = await this.loadingCtrl.create({
-      message: 'Dismissing after 3 seconds. Wait for 3 seconds...',
+      message: `Dismissing after 3 seconds. Wait for 3 seconds...`,
       duration: 3000,
       cssClass: 'custom-loading',
       backdropDismiss: false,

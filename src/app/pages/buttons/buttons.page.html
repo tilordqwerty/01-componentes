@@ -1,41 +1,46 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" class="ion-no-border">
   <ion-toolbar>
     <ion-buttons mode="ios" slot="start">
-      <ion-back-button defaultHref="/" text="Regresar" color="primary"></ion-back-button>
-    </ion-buttons>
-  
-    <ion-title>Buttons</ion-title>
-    
-    <ion-buttons slot="end">
-      <ion-button (click)="onClick()" color="danger">
-        <ion-icon slot="icon-only" [name]=" favorite ? 'heart' : 'heart-outline' "></ion-icon>
-      </ion-button>
+      <ion-back-button
+        defaultHref="/"
+        text="Regresar"
+        color="primary"
+      ></ion-back-button>
     </ion-buttons>
 
+    <ion-title class="ion-text-capitalize">buttons</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="onClick()" color="danger">
+        <ion-icon
+          slot="icon-only"
+          [name]=" favorite ? 'heart' : 'heart-outline' "
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
   <h2>Default Buttons</h2>
 
-  <ion-button>Default</ion-button> 
+  <ion-button>Default</ion-button>
   <ion-button [disabled]="true">Disabled</ion-button>
 
   <h2>Expand Buttons</h2>
 
-  <ion-button class="ion-padding" expand="block">Block</ion-button> 
+  <ion-button class="ion-padding" expand="block">Block</ion-button>
   <ion-button class="ion-padding" expand="full">Full</ion-button>
 
   <h2>Shape Buttons</h2>
 
   <ion-button>Default</ion-button>
   <ion-button shape="round">Round</ion-button>
-  
+
   <ion-button>
     <ion-icon slot="icon-only" name="heart"></ion-icon>
   </ion-button>
-  
+
   <ion-button shape="round">
     <ion-icon slot="icon-only" name="heart"></ion-icon>
   </ion-button>
@@ -58,40 +63,40 @@
   <ion-button size="small">
     <ion-icon slot="icon-only" ios="logo-apple" md="settings-sharp"></ion-icon>
   </ion-button>
-  
+
   <ion-button>
     <ion-icon slot="icon-only" ios="logo-apple" md="settings-sharp"></ion-icon>
   </ion-button>
-  
+
   <ion-button size="large">
     <ion-icon slot="icon-only" ios="logo-apple" md="settings-sharp"></ion-icon>
   </ion-button>
-  
+
   <ion-button size="small">
     <ion-icon slot="start" name="star"></ion-icon>
     Left Icon
   </ion-button>
-  
+
   <ion-button>
     <ion-icon slot="start" name="star"></ion-icon>
     Left Icon
   </ion-button>
-  
+
   <ion-button size="large">
     <ion-icon slot="start" name="star"></ion-icon>
     Left Icon
   </ion-button>
-  
+
   <ion-button size="small">
     Right Icon
     <ion-icon slot="end" name="heart"></ion-icon>
   </ion-button>
-  
+
   <ion-button>
     Right Icon
     <ion-icon slot="end" name="heart"></ion-icon>
   </ion-button>
-  
+
   <ion-button size="large">
     Right Icon
     <ion-icon slot="end" name="heart"></ion-icon>
@@ -110,8 +115,6 @@
   <ion-button color="medium">Medium</ion-button>
   <ion-button color="dark">Dark</ion-button>
 
-
   <h2>Custom Buttons</h2>
   <ion-button class="custom-button">Custom Button</ion-button>
-
 </ion-content>

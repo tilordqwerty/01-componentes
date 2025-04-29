@@ -10,7 +10,9 @@ import {
   IonList,
   IonItem,
   IonIcon,
-} from '@ionic/angular/standalone';
+  IonButtons,
+  IonMenuButton,
+  MenuController} from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
 import {
@@ -28,20 +30,20 @@ import {
   listOutline,
   reorderThreeOutline,
   refreshOutline,
+  menu,
 } from 'ionicons/icons';
 
-interface ComponentsIntf {
-  icon: string;
-  name: string;
-  redirectTo: string;
-}
+import { UsersService } from '../../services/users.service';
+import { ComponentsIntf } from '../../interfaces/Components';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
   styleUrls: ['./inicio.page.scss'],
   standalone: true,
-  imports: [
+  imports: [IonButtons, 
+    IonMenuButton,
     IonContent,
     IonHeader,
     IonTitle,
@@ -55,81 +57,13 @@ interface ComponentsIntf {
   ],
 })
 export class InicioPage implements OnInit {
-  components: ComponentsIntf[] = [
-    {
-      icon: 'american-football-outline',
-      name: 'Action Sheet',
-      redirectTo: '/action-sheet',
-    },
-    {
-      icon: 'alert-circle-outline',
-      name: 'Alert',
-      redirectTo: '/alert',
-    },
-    {
-      icon: 'person-circle-outline',
-      name: 'Avatar',
-      redirectTo: '/avatar',
-    },
-    {
-      icon: 'radio-button-off-outline',
-      name: 'Buttons',
-      redirectTo: '/buttons',
-    },
-    {
-      icon: 'albums-outline',
-      name: 'Card',
-      redirectTo: '/card',
-    },
-    {
-      icon: 'checkmark-circle-outline',
-      name: 'Checkbox',
-      redirectTo: '/checkbox',
-    },
-    {
-      icon: 'calendar-outline',
-      name: 'Date Time',
-      redirectTo: '/date-time',
-    },
-    {
-      icon: 'balloon-outline',
-      name: 'Fab',
-      redirectTo: '/fab',
-    },
-    {
-      icon: 'grid-outline',
-      name: 'Grid',
-      redirectTo: '/grid',
-    },
-    {
-      icon: 'infinite-outline',
-      name: 'Infinite Scroll',
-      redirectTo: '/infinite-scroll',
-    },
-    {
-      icon: 'document-text-outline',
-      name: 'Input',
-      redirectTo: '/input',
-    },
-    {
-      icon: 'list-outline',
-      name: 'List',
-      redirectTo: '/list',
-    },
-    {
-      icon: 'reorder-three-outline',
-      name: 'List Reorder',
-      redirectTo: '/list-reorder',
-    },
-    {
-      icon: 'refresh-outline',
-      name: 'Loading',
-      redirectTo: '/loading',
-    },      
-  ];
 
-  constructor() {
+  components!: Observable<ComponentsIntf[]>;
+
+  constructor(private menuCtrl: MenuController, 
+              private usersService: UsersService) {
     addIcons({
+      menu,
       americanFootballOutline,
       alertCircleOutline,
       personCircleOutline,
@@ -147,5 +81,11 @@ export class InicioPage implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.components = this.usersService.getMenu();
+  }
+  
+  openMenu() {
+    this.menuCtrl.open('main-menu');
+  }
 }
